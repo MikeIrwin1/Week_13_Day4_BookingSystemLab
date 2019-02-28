@@ -1,7 +1,9 @@
 package com.example.BookingSystem;
 
+import com.example.BookingSystem.models.Booking;
 import com.example.BookingSystem.models.Course;
 import com.example.BookingSystem.models.Customer;
+import com.example.BookingSystem.repositories.booking.BookingRepository;
 import com.example.BookingSystem.repositories.course.CourseRepository;
 import com.example.BookingSystem.repositories.customer.CustomerRepository;
 import org.junit.Test;
@@ -24,6 +26,9 @@ public class BookingSystemApplicationTests {
 	@Autowired
 	CustomerRepository customerRepository;
 
+	@Autowired
+	BookingRepository bookingRepository;
+
 	@Test
 	public void contextLoads() {
 	}
@@ -38,6 +43,11 @@ public class BookingSystemApplicationTests {
 	public void canGetCustomersByCourse(){
 		List<Customer> customers = customerRepository.getCustomersByCourse(1L);
 
+	}
+
+	@Test
+	public void canGetBookingsByDate(){
+		List<Booking> bookings = bookingRepository.getBookingsByDate("07-12-2019");
 	}
 
 }
