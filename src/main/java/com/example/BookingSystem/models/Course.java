@@ -1,5 +1,7 @@
 package com.example.BookingSystem.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.CollectionId;
 
 import javax.persistence.*;
@@ -23,6 +25,7 @@ public class Course {
     @Column(name = "star_rating")
     private int starRating;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 

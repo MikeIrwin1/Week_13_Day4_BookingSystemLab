@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course, Long>, CourseRepositoryCustom {
     List<Course> getCoursesByStarRating(int rating);
+    List<Course> getCoursesByCustomer(Long id);
 
-//    List<Distillery> findDistilleriesByRegion(String region);
 
 }
