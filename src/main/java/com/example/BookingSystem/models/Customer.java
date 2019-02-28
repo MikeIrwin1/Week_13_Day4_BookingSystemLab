@@ -75,5 +75,9 @@ public class Customer {
         this.bookings = bookings;
     }
 
+    public void addBooking(Booking booking){
+        this.bookings.add(booking);
+    }
+
 
 }
