@@ -20,6 +20,7 @@ public class BookingController {
 
     @GetMapping(value = "/dates/{date}")
     public List<Booking> getBookingsByDate(@PathVariable String date){
-        return bookingRepository.getBookingsByDate(date);
+        String parsed = date.toLowerCase();
+        return bookingRepository.getBookingsByDate(parsed);
     }
 }

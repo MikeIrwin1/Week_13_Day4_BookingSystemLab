@@ -25,7 +25,7 @@ public class Course {
     @Column(name = "star_rating")
     private int starRating;
 
-    @JsonIgnore
+//    @JsonIgnore
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 

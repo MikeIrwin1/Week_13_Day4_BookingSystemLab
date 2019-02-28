@@ -48,6 +48,18 @@ public class BookingSystemApplicationTests {
 	@Test
 	public void canGetBookingsByDate(){
 		List<Booking> bookings = bookingRepository.getBookingsByDate("07-12-2019");
+
 	}
+
+	@Test
+	public void canGetCustomersInTownForCourse(){
+		List<Customer> customers = customerRepository.getCustomersInTownForCourse("Edinburgh", 3L);
+	}
+
+	@Test
+	public void canGetCustomersInTownForCourseOverAnAge(){
+		List<Customer> customers = customerRepository.getCustomersInTownForCourseOverAge("Edinburgh", 3L, 32);
+	}
+
 
 }
